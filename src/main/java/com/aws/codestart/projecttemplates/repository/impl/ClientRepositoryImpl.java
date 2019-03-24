@@ -86,7 +86,7 @@ private static final AtomicLong counter = new AtomicLong();
 	
 	public String calcularDeathDay(String birthDay) {
 		String deathDay = "";
-		deathDay = birthDay.substring(0,4)+ birthDay.substring(5,10);
+		deathDay = birthDay.substring(0,4)+ birthDay.substring(4,9);
 		return deathDay;
 	}
 

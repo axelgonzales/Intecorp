@@ -50,7 +50,7 @@ public class ClientController {
     }
     
     @GetMapping("/listclientes")
-    public ResponseEntity<Response>  findDocument() {
+    public ResponseEntity<Response>  findAll() {
     	List<ClientResponse> lstClient =  this.clientService.findAll();
 		if (lstClient == null) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
