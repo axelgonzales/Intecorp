@@ -1,5 +1,8 @@
 package com.aws.codestart.projecttemplates.repository.impl;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -17,7 +20,7 @@ public class ClientRepositoryImpl implements ClientRepository {
 private static final AtomicLong counter = new AtomicLong();
 	
 	private static List<Client> clients;
-	private static int deathDay = 74;
+	private static int ageDeath = 74;
 	
 	static{
 		clients= populateDummyClients();
@@ -86,8 +89,19 @@ private static final AtomicLong counter = new AtomicLong();
 	
 	public String calcularDeathDay(String birthDay) {
 		String deathDay = "";
-		deathDay = birthDay.substring(0,4)+ birthDay.substring(4,9);
+		int yearLife = ageDeath - calcularEdad(birthDay);
+		int yearDeath = yearLife + Integer.parseInt(birthDay.substring(0,4));
+		deathDay = yearDeath + birthDay.substring(4);
 		return deathDay;
 	}
+	public int calcularEdad(String birthDay) {
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate fechaNac = LocalDate.parse(birthDay, fmt);
+		LocalDate ahora = LocalDate.now();
+
+		Period periodo = Period.between(fechaNac, ahora);
+		return periodo.getYears();
+	}
+	
 
 }
