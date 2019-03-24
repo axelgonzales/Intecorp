@@ -1,6 +1,7 @@
 package com.aws.codestart.projecttemplates.domain;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -10,9 +11,13 @@ public class Client {
 	
 	@JsonIgnore
 	private long id;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@NotNull
 	private int age;
+	@NotNull
 	private String birthDay;
 	
 	public Client(){
