@@ -96,8 +96,8 @@ private static final AtomicLong counter = new AtomicLong();
 	
 	public String calcularDeathDay(String birthDay) {
 		String deathDay = "";
-		int yearLife = ageDeath - calcularEdad(birthDay);
-		int yearDeath = yearLife + Integer.parseInt(birthDay.substring(0,4));
+//		int yearLife = ageDeath - calcularEdad(birthDay);
+		int yearDeath = ageDeath + Integer.parseInt(birthDay.substring(0,4));
 		deathDay = yearDeath + birthDay.substring(4);
 		return deathDay;
 	}
