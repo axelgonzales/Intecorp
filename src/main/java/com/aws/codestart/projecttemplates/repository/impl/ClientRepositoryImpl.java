@@ -72,7 +72,7 @@ private static final AtomicLong counter = new AtomicLong();
 		clients.add(new Client(counter.incrementAndGet(),"Axel Cristhofer", "Gonzales Llerena","1997-09-27",21));
 		clients.add(new Client(counter.incrementAndGet(),"Joyce Kathery", "Gonzales Llerena","2000-09-27",18));
 		clients.add(new Client(counter.incrementAndGet(),"Sofhie Luciana", "Gonzales Llerena","2007-09-27",11));
-		clients.add(new Client(counter.incrementAndGet(),"Axel Cristhofer", "Gonzales Llerena","1996-09-27",22));
+		clients.add(new Client(counter.incrementAndGet(),"Juan Anibal", "Gonzales Orejon","1990-09-27",28));
 		return clients;
 	}
 	
