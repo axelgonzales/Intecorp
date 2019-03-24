@@ -33,10 +33,10 @@ public class ClientController {
     
     
     @PostMapping("/creacliente")
-    public ResponseEntity<Response>  create(@Valid @RequestBody ClientRequest request) {
+    public ResponseEntity<Response>  create(@Valid @RequestBody Client client) {
     	
-		this.clientService.create(request.getClient());
-    	return new ResponseEntity<Response>(new Response(request,"Registrado correctamente"),HttpStatus.CREATED); 
+		this.clientService.create(client);
+    	return new ResponseEntity<Response>(new Response(client,"Registrado correctamente"),HttpStatus.CREATED); 
     }
     
     
