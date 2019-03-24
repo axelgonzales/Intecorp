@@ -54,7 +54,11 @@ private static final AtomicLong counter = new AtomicLong();
 			clientReponse.setLastName(clients.get(i).getFirstName());
 			clientReponse.setBirthDay(clients.get(i).getBirthDay());
 			clientReponse.setAge(clients.get(i).getAge());
-			if (clients.get(i).getBirthDay() != null ) {
+			if (clients.get(i).getBirthDay() == null || clients.get(i).getBirthDay().length() < 9) {
+				clientReponse.setBirthDay("Fecha Invalida/No definida");
+				clientReponse.setDeathDay("Desconocida");
+			}
+			else {
 				clientReponse.setBirthDay(clients.get(i).getBirthDay());
 				clientReponse.setDeathDay(calcularDeathDay(clients.get(i).getBirthDay()));
 			}
