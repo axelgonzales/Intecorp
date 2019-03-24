@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.aws.codestart.projecttemplates.controller.response.ClientResponse;
 import com.aws.codestart.projecttemplates.controller.response.KpiClient;
 import com.aws.codestart.projecttemplates.domain.Client;
 import com.aws.codestart.projecttemplates.repository.ClientRepository;
@@ -34,7 +35,7 @@ public class ClientServiceImpl  implements ClientService{
 	}
 
 	@Override
-	public List<Client> findAll() {
+	public List<ClientResponse> findAll() {
 		// TODO Auto-generated method stub
 		return clientRepository.findAll();
 	}

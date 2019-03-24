@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Repository;
 
+import com.aws.codestart.projecttemplates.controller.response.ClientResponse;
 import com.aws.codestart.projecttemplates.controller.response.KpiClient;
 import com.aws.codestart.projecttemplates.domain.Client;
 import com.aws.codestart.projecttemplates.repository.ClientRepository;
@@ -16,6 +17,7 @@ public class ClientRepositoryImpl implements ClientRepository {
 private static final AtomicLong counter = new AtomicLong();
 	
 	private static List<Client> clients;
+	private static int deathDay = 74;
 	
 	static{
 		clients= populateDummyClients();
@@ -40,8 +42,19 @@ private static final AtomicLong counter = new AtomicLong();
 	}
 
 	@Override
-	public List<Client> findAll() {
-		return clients;
+	public List<ClientResponse> findAll() {
+		List<ClientResponse> clientsReponse = new ArrayList<>();
+		ClientResponse clientReponse;
+		for (int i = 0; i < clients.size(); i++) {
+			clientReponse = new ClientResponse();
+			clientReponse.setFirstName(clients.get(i).getFirstName());
+			clientReponse.setLastName(clients.get(i).getFirstName());
+			clientReponse.setBirthDay(clients.get(i).getBirthDay());
+			clientReponse.setAge(clients.get(i).getAge());
+			clientReponse.setDeathDay(calcularDeathDay(clients.get(i).getBirthDay()));
+			clientsReponse.add(clientReponse);
+		}
+		return clientsReponse;
 	}
 	
 	private static List<Client> populateDummyClients(){
@@ -70,5 +83,11 @@ private static final AtomicLong counter = new AtomicLong();
 
 	    return prom / ( double ) clients.size();  
 	  }
+	
+	public String calcularDeathDay(String birthDay) {
+		String deathDay = "";
+		deathDay = birthDay.substring(0,4)+ birthDay.substring(5,10);
+		return deathDay;
+	}
 
 }

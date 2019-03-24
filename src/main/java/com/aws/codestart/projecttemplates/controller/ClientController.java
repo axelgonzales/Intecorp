@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aws.codestart.projecttemplates.controller.request.ClientRequest;
+import com.aws.codestart.projecttemplates.controller.response.ClientResponse;
 import com.aws.codestart.projecttemplates.controller.response.KpiClient;
 import com.aws.codestart.projecttemplates.controller.response.Response;
 import com.aws.codestart.projecttemplates.domain.Client;
@@ -51,7 +51,7 @@ public class ClientController {
     
     @GetMapping("/listclientes")
     public ResponseEntity<Response>  findDocument() {
-    	List<Client> lstClient =  this.clientService.findAll();
+    	List<ClientResponse> lstClient =  this.clientService.findAll();
 		if (lstClient == null) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}

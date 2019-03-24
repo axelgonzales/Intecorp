@@ -1,15 +1,19 @@
 package com.aws.codestart.projecttemplates.domain;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import javax.validation.Valid;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
+@Valid
 public class Client {
+	
+	@JsonIgnore
 	private long id;
 	private String firstName;
 	private String lastName;
 	private int age;
-	private String birthday;
+	private String birthDay;
 	
 	public Client(){
 		id=0;
@@ -21,7 +25,7 @@ public class Client {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.birthday = birthday;
+		this.birthDay = birthDay;
 	}
 	
 
@@ -57,13 +61,17 @@ public class Client {
 		this.age = age;
 	}
 
-	public String getBirthday() {
-		return birthday;
+	public String getBirthDay() {
+		return birthDay;
 	}
 
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
+	public void setBirthDay(String birthDay) {
+		this.birthDay = birthDay;
 	}
+
+
+
+	
 	
 	
 
