@@ -1,4 +1,4 @@
-package com.aws.codestart.projecttemplates.servicie;
+package com.aws.codestart.projecttemplates.service;
 
 import java.util.List;
 

@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class KpiClient {
-	private float oldAverage;
-	private float oldDesviation;
+	private double oldAverage;
+	private double oldDesviation;
 	
 	
 }

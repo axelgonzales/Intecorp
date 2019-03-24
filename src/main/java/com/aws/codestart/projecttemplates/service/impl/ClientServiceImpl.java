@@ -1,4 +1,4 @@
-package com.aws.codestart.projecttemplates.servicie.impl;
+package com.aws.codestart.projecttemplates.service.impl;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.aws.codestart.projecttemplates.controller.response.KpiClient;
 import com.aws.codestart.projecttemplates.domain.Client;
 import com.aws.codestart.projecttemplates.repository.ClientRepository;
-import com.aws.codestart.projecttemplates.servicie.ClientService;
+import com.aws.codestart.projecttemplates.service.ClientService;
 
 
 @Service

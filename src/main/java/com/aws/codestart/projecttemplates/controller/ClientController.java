@@ -18,7 +18,7 @@ import com.aws.codestart.projecttemplates.controller.response.KpiClient;
 import com.aws.codestart.projecttemplates.controller.response.Response;
 import com.aws.codestart.projecttemplates.domain.Client;
 import com.aws.codestart.projecttemplates.exception.ClientInsertNullException;
-import com.aws.codestart.projecttemplates.servicie.ClientService;
+import com.aws.codestart.projecttemplates.service.ClientService;
 
 
 @RestController
