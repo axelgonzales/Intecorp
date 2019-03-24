@@ -50,7 +50,7 @@ public class ClientController {
     public ResponseEntity<KpiClient>  findKpi() {    	
     	KpiClient kpiClient =  this.clientService.findKpi();
 		if (kpiClient == null) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
     	return new ResponseEntity<KpiClient>(kpiClient,HttpStatus.OK); 
     }
@@ -59,7 +59,7 @@ public class ClientController {
     public ResponseEntity<List<Client>>  findDocument() {
     	List<Client> lstClient =  this.clientService.findAll();
 		if (lstClient == null) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
     	return new ResponseEntity<List<Client>>(lstClient,HttpStatus.OK); 
     }
