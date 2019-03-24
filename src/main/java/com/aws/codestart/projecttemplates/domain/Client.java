@@ -24,7 +24,7 @@ public class Client {
 		id=0;
 	}
 
-	public Client(long id, String firstName, String lastName, String birthday,int age) {
+	public Client(long id, String firstName, String lastName, String birthDay,int age) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
