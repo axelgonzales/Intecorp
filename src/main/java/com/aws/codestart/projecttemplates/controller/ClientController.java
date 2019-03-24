@@ -51,11 +51,12 @@ public class ClientController {
     
     @GetMapping("/listclientes")
     public ResponseEntity<Response>  findAll() {
-    	List<ClientResponse> lstClient =  this.clientService.findAll();
-		if (lstClient == null) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    	try {
+        	List<ClientResponse> lstClient =  this.clientService.findAll();
+        	return new ResponseEntity<Response>(new Response(lstClient,"Procesado correctamente"),HttpStatus.OK); 
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-    	return new ResponseEntity<Response>(new Response(lstClient,"Procesado correctamente"),HttpStatus.OK); 
     }
 
 }

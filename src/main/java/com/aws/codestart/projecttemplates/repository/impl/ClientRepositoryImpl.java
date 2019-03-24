@@ -46,7 +46,7 @@ private static final AtomicLong counter = new AtomicLong();
 
 	@Override
 	public List<ClientResponse> findAll() {
-		List<ClientResponse> clientsReponse = new ArrayList<>();
+		List<ClientResponse> clientsReponse = new ArrayList<ClientResponse>();
 		ClientResponse clientReponse;
 		for (int i = 0; i < clients.size(); i++) {
 			clientReponse = new ClientResponse();
@@ -95,10 +95,9 @@ private static final AtomicLong counter = new AtomicLong();
 		return deathDay;
 	}
 	public int calcularEdad(String birthDay) {
-		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate fechaNac = LocalDate.parse(birthDay, fmt);
 		LocalDate ahora = LocalDate.now();
-
 		Period periodo = Period.between(fechaNac, ahora);
 		return periodo.getYears();
 	}
