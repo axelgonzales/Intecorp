@@ -54,7 +54,14 @@ private static final AtomicLong counter = new AtomicLong();
 			clientReponse.setLastName(clients.get(i).getFirstName());
 			clientReponse.setBirthDay(clients.get(i).getBirthDay());
 			clientReponse.setAge(clients.get(i).getAge());
-			clientReponse.setDeathDay(calcularDeathDay(clients.get(i).getBirthDay()));
+			if (clients.get(i).getBirthDay() == null || clients.get(i).getBirthDay().length()<1) {
+				clientReponse.setBirthDay("");
+				clientReponse.setDeathDay("");
+			}
+			else {
+				clientReponse.setBirthDay(clients.get(i).getBirthDay());
+				clientReponse.setDeathDay(calcularDeathDay(clients.get(i).getBirthDay()));
+			}
 			clientsReponse.add(clientReponse);
 		}
 		return clientsReponse;
